@@ -78,5 +78,4 @@ bot.command(["berlin","Berlin","germany","Germani"],ctx=>{
     })
 })
 
-
-
+bot.launch()

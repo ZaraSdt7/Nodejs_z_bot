@@ -1,0 +1,17 @@
+{
+  "name": "print",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "print": "nodemon node pront.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "nodemon": "^3.0.2",
+    "telegraf": "^4.15.3"
+  }
+}

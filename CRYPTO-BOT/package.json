@@ -1,0 +1,19 @@
+{
+  "name": "crypto-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon node crypto.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.5",
+    "dotenv": "^16.3.1",
+    "init": "^0.1.2",
+    "nodemon": "^3.0.2",
+    "telegraf": "^4.15.3"
+  }
+}

@@ -1,5 +1,6 @@
 const {Telegraf} = require("telegraf");
 const path = require("path");
+const { createReadStream } = require("fs");
 require("dotenv").config();
 const  bot = new Telegraf(process.env.API_KEYS)
 const HelpMassege = `Help text message:
@@ -30,3 +31,52 @@ bot.command("print",ctx=>{
     }
     ctx.reply(mssg)
 })
+//>>>>>>>>>cities-bot<<<<<<<<<<<<<
+bot.command("cities",ctx=>{
+    ctx.sendChatAction("typing")
+    const cities = `List of Cities:
+    /sari - Iran mazandaran
+    / Newyork - USA
+    /Dubai - AUE
+    /Berlin - Germany`;
+    ctx.reply(cities);
+})
+bot.command(["sari","mazandaran"],ctx=>{
+    ctx.sendChatAction("upload_photo");
+    ctx.sendPhoto({
+        source:createReadStream(path.join(__dirname,"cities","sari.jpg"))
+    },{
+        caption:"This is Sari city in Mazandaran Iran",
+        reply_to_message_id:ctx.message.message_id
+    })
+}),
+bot.command(["Newyork","newyork","usa","USA"],ctx=>{
+    ctx.sendChatAction("upload_photo");
+    ctx.sendPhoto({
+        source:createReadStream(path.join(__dirname,"cities","newyork.jpg"))
+    },{
+        caption:"This is NEWYORK city in USA ",
+        reply_to_message_id:ctx.message.message_id
+    })
+}),
+bot.command(["Dubai","dubai","aue","AUE"],ctx=>{
+    ctx.sendChatAction("upload_photo");
+    ctx.sendPhoto({
+        source:createReadStream(path.join(__dirname,"cities","dubai.jpg"))
+    },{
+        caption:"This is Dubai country",
+        reply_to_message_id:ctx.message.message_id
+    })
+}),
+bot.command(["berlin","Berlin","germany","Germani"],ctx=>{
+    ctx.sendChatAction("upload_photo");
+    ctx.sendPhoto({
+        source:createReadStream(path.join(__dirname,"cities","berlin.jpg"))
+    },{
+        caption:"This is Berlin  Capital city in Germany",
+        reply_to_message_id:ctx.message.message_id
+    })
+})
+
+
+

@@ -9,7 +9,7 @@ bot.on("voice",ctx=>{
 })
 bot.on("new_chat_members",ctx=>{
     const username = ctx.message.new_chat_member.username?? ctx.message.new_chat_member.first_name
-    ctx.reply(ctx.chat.first_name , "خوش اومدی عزیزم")
+    ctx.reply(`خوش اومدی:${username}`)
 })
 
 bot.launch();

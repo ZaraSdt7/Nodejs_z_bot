@@ -44,7 +44,7 @@ bot.telegram.sendMessage(ctx.chat.id,"لطفا یکی از گزینه های ز�
 bot.action(["BTC","ETH","USDT","BUSD"],async ctx =>{
     try {
      console.log(ctx.match);
-     const apiUrl = `https://min-api.cryptocompare.com/data/price?fsym=${ctx.match}&tsyms=IRR&API_KEYS=${cryptoToken}`;
+     const apiUrl = `https://min-api.cryptocompare.com/data/price?fsym=${ctx.match}&tsyms=USD&api_key=${cryptoToken}`;
      const data = await axios.get(apiUrl).then(res=>res.data)
      ctx.reply(`${Object.keys(data)[0]}:${Object.values(data)[0]}`)
     } catch (error) {
@@ -53,7 +53,6 @@ bot.action(["BTC","ETH","USDT","BUSD"],async ctx =>{
     ctx.answerCbQuery()
 })
 bot.action("main menu",ctx=>{
-    ctx.editMessageText("منوی اصلی");
     ctx.answerCbQuery();
     ctx.deleteMessage();
     bot.telegram.sendMessage(ctx.chat.id,"منوی اصلی:",{

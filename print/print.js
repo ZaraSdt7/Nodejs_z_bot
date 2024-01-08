@@ -4,10 +4,10 @@ const { createReadStream } = require("fs");
 require("dotenv").config();
 const  bot = new Telegraf(process.env.API_KEYS)
 const HelpMassege = `Help text message:
-/Start - start the bot
-/Setting - setting the bot
-/Print - the pront command send message to ptint
-/Cities - the list of big cities world`;
+/start - start the bot
+/setting - setting the bot
+/print - the pront command send message to ptint
+/cities - the list of big cities world`;
 bot.start(ctx=>{
     ctx.sendChatAction("typing");
     ctx.reply("Hello i`m pront-bot!");
@@ -36,7 +36,7 @@ bot.command("cities",ctx=>{
     ctx.sendChatAction("typing")
     const cities = `List of Cities:
     /sari - Iran mazandaran
-    / Newyork - USA
+    /Newyork - USA
     /Dubai - AUE
     /Berlin - Germany`;
     ctx.reply(cities);
